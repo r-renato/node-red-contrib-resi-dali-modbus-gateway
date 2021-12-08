@@ -1,0 +1,178 @@
+<!-- Next node -->
+
+<script type="text/html" data-template-name="dali-query">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-modbus-unitid"><i class="fa fa-tag"></i> Modbus unitid</label>
+        <input type="number" id="node-input-modbus-unitid" placeholder="1...255" min=1 max=255>
+    </div>
+    <div class="form-row">
+        <label for="node-input-modbus-function"><i class="fa fa-tag"></i> Modbus function</label>
+        <input type="number" id="node-input-modbus-function" placeholder="1...16" min=1 max=16>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-dali-address"><i class="fa fa-tag"></i> DALI address</label>
+        <input type="number" id="node-input-dali-address" placeholder="0...63" min=0 max=63 >
+    </div>
+    <div class="form-row">
+        <label for="node-input-registry-name"><i class="fa fa-tag"></i> DALI Registry Name</label>
+        <input type="text" id="node-input-registry-name" placeholder="DALI Registry Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-command"><i class="fa fa-tag"></i> DALI Command</label>
+        <input type="text" id="node-input-command" placeholder="DALI Command">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="dali-query">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('dali-query',{
+        category: 'RESI DALI Modbus Gateway',
+        color: '#a6bbcf',
+        defaults: {
+            name : {value : ""},
+            "modbus-unitid" : {value : 255},
+            "modbus-function" : {value : 6},
+            topic : {value:""},
+            "dali-address" : {value:0},
+            "registry-name" : {value:""},
+            "command" : {value:""},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"dali-query";
+        },
+        labelStyle: function() { return this.name?"node_label_italic":"";},
+        oneditprepare: function() {},
+        oneditsave: function() {},
+        oneditcancel : function() {},
+        oneditdelete : function() {},
+        oneditresize : function() {}
+    });
+</script>
+
+<!-- Next node -->
+
+<script type="text/html" data-template-name="dali-lamp-level">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-dali-address"><i class="fa fa-tag"></i> DALI address</label>
+        <input type="number" id="node-input-dali-address" placeholder="0...63" min=0 max=63>
+    </div>
+    <div class="form-row">
+        <label for="node-input-registry-name"><i class="fa fa-tag"></i> DALI Registry Name</label>
+        <input type="text" id="node-input-registry-name" placeholder="DALI Registry Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-level"><i class="fa fa-tag"></i> DALI Lamp Level</label>
+        <input type="number" id="node-input-level" placeholder="0...254" min=0 max=254>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="dali-lamp-level">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('dali-lamp-level',{
+        category: 'RESI DALI Modbus Gateway',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            topic: {value:""},
+            "dali-address": {value:0, required:false},
+            "registry-name": {value:"", required:false},
+            "level": {value:0, required:false},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"dali-lamp-level";
+        },
+        labelStyle: function() { return this.name?"node_label_italic":"";},
+        oneditprepare: function() {},
+        oneditsave: function() {},
+        oneditcancel : function() {},
+        oneditdelete : function() {},
+        oneditresize : function() {}
+    });
+</script>
+
+<!-- Next node -->
+
+<script type="text/html" data-template-name="dali-response">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-dali-address"><i class="fa fa-tag"></i> DALI address</label>
+        <input type="number" id="node-input-dali-address" placeholder="0...63" min=0 max=63>
+    </div>
+    <div class="form-row">
+        <label for="node-input-registry-name"><i class="fa fa-tag"></i> DALI Registry Name</label>
+        <input type="text" id="node-input-registry-name" placeholder="DALI Registry Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-level"><i class="fa fa-tag"></i> DALI Lamp Level</label>
+        <input type="number" id="node-input-level" placeholder="0...254" min=0 max=254>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="dali-response">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('dali-response',{
+        category: 'RESI DALI Modbus Gateway',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            topic: {value:""},
+            "dali-address": {value:0, required:false},
+            "registry-name": {value:"", required:false},
+            "level": {value:0, required:false},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"dali-response";
+        },
+        labelStyle: function() { return this.name?"node_label_italic":"";},
+        oneditprepare: function() {},
+        oneditsave: function() {},
+        oneditcancel : function() {},
+        oneditdelete : function() {},
+        oneditresize : function() {}
+    });
+</script>
