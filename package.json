@@ -27,6 +27,9 @@
     "@types/node-red-node-test-helper": "^0.2.2",
     "modbus-serial": "^8.0.5"
   },
+  "dependencies": {
+    "modbus-serial": "~8.0.5"
+  },
   "node-red": {
     "nodes": {
       "resi-dali": "dist/resi-dali-modbus-gateway.js"
